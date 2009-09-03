@@ -32,9 +32,7 @@ Benchmark.bm do |b|
        IO.copy_stream('fixtures/verne.txt', 'fixtures/tmp', 40, 40)
      end
    end
-   
-   #ObjectSpace.each_object(IO) {|x| p x.close unless x.closed? }   
-   
+      
    destination = File.open('fixtures/tmp', 'w+')
    # not running on MacRuby atm
    # b.report("copy_stream using IO sources (small file)\n") do
